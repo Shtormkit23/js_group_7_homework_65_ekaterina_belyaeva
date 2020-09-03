@@ -1,0 +1,16 @@
+.Logo {
+    padding: 8px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.Logo img {
+    width: 105px;
+}
+
+.Logo p{
+    font-family: 'Dancing Script', cursive;
+    font-size: 75px;
+    margin: 0 0 0 -25px
+}
