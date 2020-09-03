@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Route, Switch} from 'react-router-dom';
+import Layout from "./components/Layout/Layout";
+import MainBlock from "./containers/MainBlock/MainBlock";
 import './App.css';
+import AdminBlock from "./containers/AdmiBlock/AdminBlock";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Layout>
+        <Switch>
+          <Route path="/" exact component={MainBlock}/>
+            <Route path="/pages/admin" component={AdminBlock}/>
+            <Route path="/pages/:id" component={MainBlock}/>
+          <Route render={() => <h1>404 Not Found</h1>}/>
+        </Switch>
+      </Layout>
   );
-}
+};
 
 export default App;
